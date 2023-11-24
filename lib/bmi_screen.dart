@@ -19,12 +19,8 @@ class _BmiScreenState extends State<BmiScreen> {
           //First Section (Gender Buttons)
           GenderSelection(),
 
-          Expanded(
-            flex: 4,
-            child: Container(
-              color: Colors.green,
-            ),
-          ),
+          HeightSelection(),
+
           Expanded(
             flex: 4,
             child: Container(
@@ -74,7 +70,7 @@ class _BmiScreenState extends State<BmiScreen> {
                           size: 80.0,
                         ),
                         Text(
-                          'Male',
+                          'MALE',
                           style: TextStyle(
                               fontSize: 30.0, fontWeight: FontWeight.bold),
                         )
@@ -100,7 +96,7 @@ class _BmiScreenState extends State<BmiScreen> {
                           size: 80.0,
                         ),
                         Text(
-                          'Female',
+                          'FEMALE',
                           style: TextStyle(
                               fontSize: 30.0, fontWeight: FontWeight.bold),
                         )
@@ -112,5 +108,57 @@ class _BmiScreenState extends State<BmiScreen> {
             ],
           ),
         ));
+  }
+
+  Widget HeightSelection() {
+    return Expanded(
+      flex: 4,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 25.0),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.grey[400],
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'HEIGHT',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
+                children: [
+                  Text(
+                    '180',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+                  ),
+                  SizedBox(
+                    width: 5.0,
+                  ),
+                  Text(
+                    'CM',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
+                  )
+                ],
+              ),
+              Slider(
+                  value: 120.0,
+                  min: 80.0,
+                  max: 220.0,
+                  onChanged: (value) => print(value)),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
