@@ -17,36 +17,19 @@ class _BmiScreenState extends State<BmiScreen> {
       body: Column(
         children: [
           //First Section (Gender Buttons)
-          GenderSelection(),
+          genderSelection(),
 
-          HeightSelection(),
+          heightSelection(),
 
-          Expanded(
-            flex: 4,
-            child: Container(
-              color: Colors.blue,
-            ),
-          ),
-          Expanded(
-            child: MaterialButton(
-              color: Colors.red,
-              minWidth: double.infinity,
-              onPressed: () {},
-              child: Text(
-                'Calculate',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.0),
-              ),
-            ),
-          ),
+          weightAndAgeSelection(),
+
+          calculationButton(),
         ],
       ),
     );
   }
 
-  Widget GenderSelection() {
+  Widget genderSelection() {
     return Expanded(
         flex: 4,
         child: Padding(
@@ -110,7 +93,7 @@ class _BmiScreenState extends State<BmiScreen> {
         ));
   }
 
-  Widget HeightSelection() {
+  Widget heightSelection() {
     return Expanded(
       flex: 4,
       child: Padding(
@@ -125,7 +108,7 @@ class _BmiScreenState extends State<BmiScreen> {
             children: [
               Text(
                 'HEIGHT',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
               ),
               SizedBox(
                 height: 10.0,
@@ -157,6 +140,112 @@ class _BmiScreenState extends State<BmiScreen> {
                   onChanged: (value) => print(value)),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget weightAndAgeSelection() {
+    return Expanded(
+        flex: 4,
+        child: Padding(
+          padding: const EdgeInsets.all(25.0),
+          child: Row(
+            children: [
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[400],
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        'WEIGHT',
+                        style: TextStyle(
+                            fontSize: 25.0, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        '80.0',
+                        style: TextStyle(
+                            fontSize: 25.0, fontWeight: FontWeight.bold),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FloatingActionButton(
+                            onPressed: () {},
+                            child: Icon(Icons.remove),
+                            mini: true,
+                          ),
+                          FloatingActionButton(
+                            mini: true,
+                            onPressed: () {},
+                            child: Icon(Icons.add),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 25.0,
+              ),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[400],
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        'AGE',
+                        style: TextStyle(
+                            fontSize: 25.0, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        '25',
+                        style: TextStyle(
+                            fontSize: 25.0, fontWeight: FontWeight.bold),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FloatingActionButton(
+                            onPressed: () {},
+                            child: Icon(Icons.remove),
+                            mini: true,
+                          ),
+                          FloatingActionButton(
+                            mini: true,
+                            onPressed: () {},
+                            child: Icon(Icons.add),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ));
+  }
+
+  Widget calculationButton() {
+    return Expanded(
+      child: MaterialButton(
+        color: Colors.blue,
+        minWidth: double.infinity,
+        onPressed: () {},
+        child: Text(
+          'Calculate',
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20.0),
         ),
       ),
     );
