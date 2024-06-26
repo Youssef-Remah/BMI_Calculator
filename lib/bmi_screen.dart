@@ -21,7 +21,7 @@ class _BmiScreenState extends State<BmiScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI Calculator'),
+        title: const Text('BMI Calculator'),
       ),
       body: Column(
         children: [
@@ -55,7 +55,7 @@ class _BmiScreenState extends State<BmiScreen> {
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                     width: double.infinity,
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Image(image: AssetImage('assets/images/male.png')),
@@ -69,7 +69,7 @@ class _BmiScreenState extends State<BmiScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 25.0,
               ),
               Expanded(
@@ -86,7 +86,7 @@ class _BmiScreenState extends State<BmiScreen> {
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                     width: double.infinity,
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Image(
@@ -120,11 +120,11 @@ class _BmiScreenState extends State<BmiScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'HEIGHT',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10.0,
               ),
               Row(
@@ -135,12 +135,12 @@ class _BmiScreenState extends State<BmiScreen> {
                   Text(
                     '${heightValue.round()}',
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+                        const TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5.0,
                   ),
-                  Text(
+                  const Text(
                     'CM',
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
@@ -179,7 +179,7 @@ class _BmiScreenState extends State<BmiScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(
+                      const Text(
                         'WEIGHT',
                         style: TextStyle(
                             fontSize: 25.0, fontWeight: FontWeight.bold),
@@ -218,7 +218,7 @@ class _BmiScreenState extends State<BmiScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 25.0,
               ),
               Expanded(
@@ -230,14 +230,14 @@ class _BmiScreenState extends State<BmiScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(
+                      const Text(
                         'AGE',
                         style: TextStyle(
                             fontSize: 25.0, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        '${ageValue}',
-                        style: TextStyle(
+                        '$ageValue',
+                        style: const TextStyle(
                             fontSize: 25.0, fontWeight: FontWeight.bold),
                       ),
                       Row(
@@ -249,9 +249,9 @@ class _BmiScreenState extends State<BmiScreen> {
                                 ageValue--;
                               });
                             },
-                            child: Icon(Icons.remove),
                             mini: true,
                             heroTag: 'age-',
+                            child: const Icon(Icons.remove),
                           ),
                           FloatingActionButton(
                             mini: true,
@@ -260,8 +260,8 @@ class _BmiScreenState extends State<BmiScreen> {
                                 ageValue++;
                               });
                             },
-                            child: Icon(Icons.add),
                             heroTag: 'age+',
+                            child: const Icon(Icons.add),
                           ),
                         ],
                       )
@@ -291,7 +291,7 @@ class _BmiScreenState extends State<BmiScreen> {
                         bmiResult: bmiResult,
                       )));
         },
-        child: Text(
+        child: const Text(
           'Calculate',
           style: TextStyle(
               color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20.0),

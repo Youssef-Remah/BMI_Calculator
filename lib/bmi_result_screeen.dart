@@ -17,7 +17,7 @@ class BMIResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI Result'),
+        title: const Text('BMI Result'),
       ),
       body: Center(
         child: Column(
@@ -25,21 +25,21 @@ class BMIResultScreen extends StatelessWidget {
           children: [
             Text(
               'Gender: ${(isMale) ? 'Male' : 'Female'}',
-              style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15.0,
             ),
             Text(
-              'Age: ${ageValue}',
-              style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+              'Age: $ageValue',
+              style: const TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15.0,
             ),
             Text(
               'BMI Result: ${bmiResult.round()}',
-              style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
             ),
           ],
         ),
