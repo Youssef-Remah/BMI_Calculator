@@ -17,7 +17,7 @@ This Flutter application helps users calculate their Body Mass Index (BMI). The 
 ## Installation
 1- **Clone the repository:**
 
-`git clone https://github.com/yourusername/bmi-calculator.git`
+`git clone https://github.com/Youssef-Remah/BMI_Calculator.git`
 
 2- **Navigate to the project directory:**
 
